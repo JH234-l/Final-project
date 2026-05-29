@@ -41,9 +41,10 @@
                 <p class="card-text">This is a high go-to for many wrestlers.</p>
                 <form>
                   <div class="form-group">
-                    <label for="formControlRange">Example Range input</label>
-                    <input type="range" class="form-control-range" id="formControlRange">
+                    <label for="num">Quantity</label>
+                    <input type="number" id="num" class="form-control" value="1" min="1">
                   </div>
+                  <p>Total Price$: <span id="total">5</span></p>
                 </form>
               </div>
             </div>
@@ -69,7 +70,6 @@
 </div>
 </div>
     <!-- Optional JavaScript; choose one of the two! -->
-
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
@@ -80,5 +80,18 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     -->
+  <script>
+  let price = 5;
+  let num = document.getElementById("num");
+  let large = document.getElementById("total");
+  function update() {
+    let quan = num.value;
+    let subtotal = quan * price;
+    let Totalprice= subtotal * 1.15;
+    large.innerHTML = Totalprice.toFixed(2);
+  }
+  num.onchange = update;
+  num.onkeyup = update;
+</script>
   </body>
 </html>
